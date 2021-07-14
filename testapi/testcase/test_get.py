@@ -42,7 +42,8 @@ class Test:
 
 
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
+    pytest.main(['test_get.py', '-v', '--alluredir', '../report/xml/'])
 #     if os.path.exists('../report/xml'):
 #         shutil.rmtree('../report/xml')
 #         print('xml文件夹已存在，删除成功！')
