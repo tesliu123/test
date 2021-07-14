@@ -1,4 +1,10 @@
 # encoding=utf-8
+import sys
+import os
+import os.path
+sys.path.append(os.path.abspath('{bastpath}{sep}..'.format(bastpath=sys.path[0],sep=os.path.sep)))
+
+
 import shutil
 
 import pytest
