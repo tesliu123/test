@@ -48,12 +48,12 @@ class Test:
 
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     
-    if os.path.exists('../report/xml'):
-        shutil.rmtree('../report/xml')
-        print('xml文件夹已存在，删除成功！')
-    else:
-        pytest.main(['test_get.py', '-v', '--alluredir', '../report/xml/'])
-        time.sleep(10)
-        os.system('allure generate ../report/xml -o ../report/allurehtml --clean')
+#     if os.path.exists('../report/xml'):
+#         shutil.rmtree('../report/xml')
+#         print('xml文件夹已存在，删除成功！')
+#     else:
+#         pytest.main(['test_get.py', '-v', '--alluredir', '../report/xml/'])
+#         time.sleep(10)
+#         os.system('allure generate ../report/xml -o ../report/allurehtml --clean')
