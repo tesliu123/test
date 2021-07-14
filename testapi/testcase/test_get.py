@@ -26,15 +26,15 @@ class Test:
         url=all_api['url']
         params=all_api['params']
         yuqi=all_api['yuqi']
-        log.printInfo('½Ó¿Úµ÷ÓÃ¿ªÊ¼:ÇëÇóµÄurlÊÇ£º{}£¬²ÎÊıÊÇ£º{},Æ´½ÓºóµÄurlµØÖ·ÊÇ£º{}{},case_idÊÇ{}'.format(url,params,url,params,case_id))
+        log.printInfo('æ¥å£è°ƒç”¨å¼€å§‹:è¯·æ±‚çš„urlæ˜¯ï¼š{}ï¼Œå‚æ•°æ˜¯ï¼š{},æ‹¼æ¥åçš„urlåœ°å€æ˜¯ï¼š{}{},case_idæ˜¯{}'.format(url,params,url,params,case_id))
         response = api.get(url,params)
-        log.printInfo('½Ó¿ÚÊµ¼Ê·µ»Ø½á¹û£º{}'.format(response))
-        log.printInfo('½Ó¿ÚµÄÔ¤ÆÚ½á¹û£º%s' % yuqi)
+        log.printInfo('æ¥å£å®é™…è¿”å›ç»“æœï¼š{}'.format(response))
+        log.printInfo('æ¥å£çš„é¢„æœŸç»“æœï¼š%s' % yuqi)
         if response == yuqi:
-            log.printInfo('Êµ¼Ê·µ»Ø½á¹ûºÍÔ¤ÆÚ½á¹ûĞ£ÑéÎª£ºTrue')
+            log.printInfo('å®é™…è¿”å›ç»“æœå’Œé¢„æœŸç»“æœæ ¡éªŒä¸ºï¼šTrue')
             result1='Pass'
         else:
-            log.printInfo('Êµ¼Ê·µ»Ø½á¹ûÓëÔ¤ÆÚ½á¹ûĞ£ÑéÎª: False')
+            log.printInfo('å®é™…è¿”å›ç»“æœä¸é¢„æœŸç»“æœæ ¡éªŒä¸º: False')
             result1='Fail'
         assert response == yuqi
         self.r.wr_excel('get_case',case_id,response,result1)
@@ -42,11 +42,11 @@ class Test:
 
 
 
-if __name__ == '__main__':
-    if os.path.exists('../report/xml'):
-        shutil.rmtree('../report/xml')
-        print('xmlÎÄ¼ş¼ĞÒÑ´æÔÚ£¬É¾³ı³É¹¦£¡')
-    else:
-        pytest.main(['test_get.py', '-v', '--alluredir', '../report/xml/'])
-        time.sleep(10)
-        os.system('allure generate ../report/xml -o ../report/allurehtml --clean')
+# if __name__ == '__main__':
+#     if os.path.exists('../report/xml'):
+#         shutil.rmtree('../report/xml')
+#         print('xmlæ–‡ä»¶å¤¹å·²å­˜åœ¨ï¼Œåˆ é™¤æˆåŠŸï¼')
+#     else:
+#         pytest.main(['test_get.py', '-v', '--alluredir', '../report/xml/'])
+#         time.sleep(10)
+#         os.system('allure generate ../report/xml -o ../report/allurehtml --clean')
